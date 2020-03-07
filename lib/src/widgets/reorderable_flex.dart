@@ -674,7 +674,7 @@ class _ReorderableFlexContentState extends State<_ReorderableFlexContent>
 //      }
       return child;
     }
-
+    void leaving(Object leaving){}
     // We wrap the drag target in a Builder so that we can scroll to its specific context.
     return Builder(builder: (BuildContext context) {
       Widget dragTarget = DragTarget<Key>(
@@ -707,7 +707,7 @@ class _ReorderableFlexContentState extends State<_ReorderableFlexContent>
           return willAccept; //_dragging == toAccept && toAccept != toWrap.key;
         },
         onAccept: (Key accepted) {},
-        onLeave: (Object leaving) {},
+        onLeave:leaving,// (Object leaving) {},
       );
 
       dragTarget = KeyedSubtree(key: keyIndexGlobalKey, child: dragTarget);
