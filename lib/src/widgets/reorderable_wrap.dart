@@ -937,18 +937,18 @@ class _ReorderableWrapContentState extends State<_ReorderableWrapContent>
         // If the target is not the original starting point, then we will accept the drop.
         return willAccept; //_dragging == toAccept && toAccept != toWrap.key;
       }
-
+      void leaving(Object leaving){}
       Widget preDragTarget = DragTarget<int>(
         builder: (BuildContext context, List<int> acceptedCandidates, List<dynamic> rejectedCandidates) => SizedBox(),
         onWillAccept: (int toAccept) => _onWillAccept(toAccept, true),
         onAccept: (int accepted) {},
-        onLeave: (Object leaving) {},
+        onLeave:leaving,// (Object leaving) {},
       );
       Widget nextDragTarget = DragTarget<int>(
         builder: (BuildContext context, List<int> acceptedCandidates, List<dynamic> rejectedCandidates) => SizedBox(),
         onWillAccept: (int toAccept) => _onWillAccept(toAccept, false),
         onAccept: (int accepted) {},
-        onLeave: (Object leaving) {},
+        onLeave: leaving,//(Object leaving) {},
       );
 
       Widget dragTarget = Stack(
