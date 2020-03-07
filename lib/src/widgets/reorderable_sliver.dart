@@ -786,7 +786,7 @@ class _ReorderableSliverListState extends State<ReorderableSliverList>
 //        child: containedDraggable,
 //      );
     }
-
+void leaving(Object leaving){}
     // We wrap the drag target in a Builder so that we can scroll to its specific context.
     return Builder(builder: (BuildContext context) {
       Widget dragTarget = DragTarget<int>(
@@ -820,7 +820,7 @@ class _ReorderableSliverListState extends State<ReorderableSliverList>
           return willAccept;//_dragging == toAccept && toAccept != toWrap.key;
         },
         onAccept: (int accepted) {},
-        onLeave: (int leaving) {},
+        onLeave: leaving,//(int leaving) {},
       );
 
 //      dragTarget = KeyedSubtree(
