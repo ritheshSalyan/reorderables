@@ -820,7 +820,7 @@ class _ReorderableSliverListState extends State<ReorderableSliverList>
           return willAccept;//_dragging == toAccept && toAccept != toWrap.key;
         },
         onAccept: (int accepted) {},
-        onLeave: (Object leaving) {},
+        onLeave: (int leaving) {},
       );
 
 //      dragTarget = KeyedSubtree(
